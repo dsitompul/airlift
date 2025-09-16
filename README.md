@@ -1,4 +1,4 @@
-# :earth_americas: GDP dashboard template
+# :earth_americas: AIRLIFT - Aircraft Local Impact Footprint Tool
 
 A simple Streamlit app showing the GDP of different countries in the world.
 
