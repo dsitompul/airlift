@@ -1,6 +1,6 @@
 # :earth_americas: AIRLIFT - Aircraft Local Impact Footprint Tool
 
-A simple Streamlit app showing the GDP of different countries in the world.
+A simple Streamlit app showing the LTO emission and pollution of different airports in the world.
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://gdp-dashboard-template.streamlit.app/)
 
