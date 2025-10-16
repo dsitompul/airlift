@@ -112,7 +112,7 @@ def render_primary_map(filtered_df, selected_country, is_embedded = False):
 
         # Build HTML for embedding Google Map
         map_html = f"""
-        <div id="map" style="height: 600px; width: 100%;"></div>
+        <div id="map" style="height: 100vh; width: 100%;"></div>
         <script>
             function initMap() {{
             var center = {{lat: {center_lat}, lng: {center_lon} }};
