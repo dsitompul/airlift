@@ -174,7 +174,10 @@ def render_primary_map(filtered_df, selected_country, is_embedded = False):
 
         # Display the map
         with st.container():
-            html(map_html, height=100% if is_embedded else 650)
+            if is_embedded:
+                html(map_html, height=800)
+            else:
+                html(map_html, height=650)
     else:
         st.warning("No data available for the selected filter. Please adjust your selection.")
 
