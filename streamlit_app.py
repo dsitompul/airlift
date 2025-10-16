@@ -67,7 +67,7 @@ def render_primary_map(filtered_df, selected_country, is_embedded = False):
         }}
         #map {{
             width: 100%;
-            {"height: 100vh;" if is_embedded else "height: 650px;"}
+            {"height: 100%;" if is_embedded else "height: 650px;"}
         }}
         </style>
         """,
