@@ -56,7 +56,7 @@ def render_primary_map(filtered_df, selected_country, is_embedded = False):
         f"""
         <style>
         html, body, [data-testid="stAppViewContainer"], .main, .block-container {{
-            {"height: 100vh; margin: 0; padding: 0;" if is_embedded else ""}
+            {"height: 100%; margin: 0; padding: 0;" if is_embedded else ""}
         }}
         .full-width-container {{
             width: 100% !important;
