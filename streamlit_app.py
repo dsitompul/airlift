@@ -41,7 +41,9 @@ def hide_streamlit_chrome_for_iframe():
     """, unsafe_allow_html=True)
 
 
-def render_primary_map(filtered_df, selected_country):
+def render_primary_map(filtered_df, selected_country, is_embedded = False):
+
+
     # Map center logic
     if not filtered_df.empty:
         center_lat = filtered_df['Airport Latitude'].mean()
@@ -51,15 +53,22 @@ def render_primary_map(filtered_df, selected_country):
 
     # Add CSS to make the container full width
     st.markdown(
-        """
+        f"""
         <style>
-        .full-width-container {
+        html, body, [data-testid="stAppViewContainer"], .main, .block-container {{
+            {"height: 100vh; margin: 0; padding: 0;" if is_embedded else ""}
+        }}
+        .full-width-container {{
             width: 100% !important;
             margin-left: 0 !important;
             margin-right: 0 !important;
             padding-left: 0 !important;
             padding-right: 0 !important;
-        }
+        }}
+        #map {{
+            width: 100%;
+            {"height: 100vh;" if is_embedded else "height: 650px;"}
+        }}
         </style>
         """,
         unsafe_allow_html=True
@@ -227,7 +236,7 @@ if VIEW == "map" and IS_EMBED:
     # Initializing selected_country == all
     selected_country = 'All'
     filtered_df = df if selected_country == "All" else df[df['Country'] == selected_country]
-    render_primary_map(filtered_df, selected_country)
+    render_primary_map(filtered_df, selected_country, IS_EMBED)
     st.stop()
 
 #---- END iframe ----
